@@ -10,9 +10,10 @@ Task List com PHP, Laravel e MySQL
 
 # Instalação
 
-Após clonar o repositório navegar até a raiz do projeto e executar os seguintes comandos:  
+Após clonar o repositório navegar até a raiz do projeto e executar os seguintes comandos/ações:  
 
 * composer install  
+* Configurar o arquivo .env conforme definições do ambiente
 * php artisan migrate  
 * php artisan db:seed 
 
