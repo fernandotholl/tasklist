@@ -11,6 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bower_components/jqueryui/themes/base/jquery-ui.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -75,6 +77,9 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bower_components/jqueryui/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

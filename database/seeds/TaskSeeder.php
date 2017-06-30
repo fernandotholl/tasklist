@@ -12,8 +12,9 @@ class TaskSeeder extends Seeder
     public function run()
     {
         App\Task::create([
-            'title' => str_random(10),
+            'title' => "Task test ".str_random(10),
             'status' => 1,
+            'user_id' => 1,
             'description' => str_random(50),
         ]);
     }

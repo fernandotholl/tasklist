@@ -23,3 +23,5 @@ public function boot()
 php artisan migrate
 php artisan db:seed --class=TaskSeeder
 php artisan make:auth
+
+php artisan jwt:generate

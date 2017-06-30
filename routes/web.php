@@ -12,12 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 // Basic API Auth
 Route::group(['prefix' => 'api',  'middleware' => 'apiauth'], function()
 {
+	Route::post('/tasks/order', 'TasksController@order');
+	Route::post('/tasks/complete/{id}', 'TasksController@complete');
     Route::resource('tasks', 'TasksController');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
