@@ -15,7 +15,5 @@ Após clonar o repositório navegar até a raiz do projeto e executar os seguint
 * composer install  
 * php artisan migrate  
 * php artisan db:seed 
-* php artisan make:auth  
-* php artisan jwt:generate  
 
 (As dependências do front-end já estão no repositório, porém se for necessário, poderia ser executado o comando bower install no diretório /public)  
