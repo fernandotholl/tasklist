@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
 	// Para testes
-	var debug = true;
+	var debug = false;
 	var token = $('.__token').val();
     var tasklistObj = $("#tasklist");
 

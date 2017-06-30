@@ -25,6 +25,7 @@
                     </div>
 
                     <hr/>
+                    <p><b>Drag</b> to change the order</p>
                     <textarea id="output"></textarea>
 
                 </div>
