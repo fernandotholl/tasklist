@@ -1,27 +1,21 @@
 # tasklist
-Task List com PHP, Laravel e MySQL
+Task List com PHP, Laravel e MySQL  
 
+# Dependências
 
-# Observações quanto ao MySQL
+* PHP >= 5.6.4
+* MySQL >= 5.7
+* Laravel Framework >= 5.4
+* tymon/jwt-auth >= 0.5
 
-[Illuminate\Database\QueryException]
-SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table users add unique users_email_unique(email))
+# Instalação
 
-[PDOException]
-SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes
-As outlined in the Migrations guide to fix this all you have to do is edit your AppServiceProvider.php file and inside the boot method set a default string length:
+Após clonar o repositório navegar até a raiz do projeto e executar os seguintes comandos:  
 
-<code>
-use Illuminate\Support\Facades\Schema;
+* composer install  
+* php artisan migrate  
+* php artisan db:seed 
+* php artisan make:auth  
+* php artisan jwt:generate  
 
-public function boot()
-{
-    Schema::defaultStringLength(191);
-}
-</code>
-
-php artisan migrate
-php artisan db:seed --class=TaskSeeder
-php artisan make:auth
-
-php artisan jwt:generate
+(As dependências do front-end já estão no repositório, porém se for necessário, poderia ser executado o comando bower install no diretório /public)  

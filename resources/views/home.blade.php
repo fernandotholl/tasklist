@@ -8,6 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
+
+                    <input type="hidden" name="__token" class="__token" value="{{ $token }}">
                     
                     <div class="input-group" id="add-form">
                         <input type="text" class="form-control newTitle" placeholder="Add Task...">

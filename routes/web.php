@@ -16,13 +16,13 @@ Route::get('/', function () {
 });
 
 // Basic API Auth
-Route::group(['prefix' => 'api',  'middleware' => 'apiauth'], function()
+Route::post('/api/authenticate', 'AuthController@authenticate');
+Route::group(['prefix' => 'api',  'middleware' => 'jwt.auth'], function()
 {
 	Route::post('/tasks/order', 'TasksController@order');
 	Route::post('/tasks/complete/{id}', 'TasksController@complete');
     Route::resource('tasks', 'TasksController');
 });
-
 
 Auth::routes();
 

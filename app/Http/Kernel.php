@@ -59,5 +59,9 @@ class Kernel extends HttpKernel
 
         // Custom middleware auth
         'apiauth' => \App\Http\Middleware\apiAuthMiddleware::class,
+
+        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh' => \TymonJWTAuth\Middleware\RefreshToken::class
+
     ];
 }

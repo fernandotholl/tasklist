@@ -2,9 +2,7 @@ jQuery(document).ready(function($) {
 
 	// Para testes
 	var debug = true;
-	var username = 'test';
-	var password = '123'; // capture token
-
+	var token = $('.__token').val();
     var tasklistObj = $("#tasklist");
 
     function itemFormat (id, title, description, created_at, updated_at = '', status) {
@@ -45,7 +43,7 @@ jQuery(document).ready(function($) {
 		    dataType: 'json',
 		    async: false,
 		    beforeSend: function (xhr) {
-			    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+			    xhr.setRequestHeader("Authorization", "Bearer " + token);
 			}
 		}).done(function(data) {
 
@@ -81,7 +79,7 @@ jQuery(document).ready(function($) {
 		    	"title" : title
 		   	},
 		    beforeSend: function (xhr) {
-			    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+			    xhr.setRequestHeader("Authorization", "Bearer " + token);
 			}
 		}).done(function(data) {
 
@@ -127,7 +125,7 @@ jQuery(document).ready(function($) {
 		    	"status" : status
 		   	},
 		    beforeSend: function (xhr) {
-			    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+			    xhr.setRequestHeader("Authorization", "Bearer " + token);
 			}
 		}).done(function(data) {
 
@@ -161,7 +159,7 @@ jQuery(document).ready(function($) {
 		    	"title" : title
 		   	},
 		    beforeSend: function (xhr) {
-			    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+			    xhr.setRequestHeader("Authorization", "Bearer " + token);
 			}
 		}).done(function(data) {
 
@@ -183,6 +181,8 @@ jQuery(document).ready(function($) {
 	$(document).on('click', ".btnRem", function(){
 		
 		var id = $(this).attr('data-id');
+		var objTmp = $('#task_'+id);
+		var $_this;
 
 		$.ajax({
 		    type: "DELETE",
@@ -190,10 +190,11 @@ jQuery(document).ready(function($) {
 		    dataType: 'json',
 		    async: false,
 		    beforeSend: function (xhr) {
-			    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+			    xhr.setRequestHeader("Authorization", "Bearer " + token);
+			},
+			complete: function(){
+				$("#task_"+id).remove();
 			}
-		}).done(function(data) {
-			$('#task_'+id).remove();
 		});
 
 	});
@@ -216,7 +217,7 @@ jQuery(document).ready(function($) {
 			    	orders: dataArray
 			    },
 			    beforeSend: function (xhr) {
-				    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+				    xhr.setRequestHeader("Authorization", "Bearer " + token);
 				}
 			}).done(function(data) {
 
