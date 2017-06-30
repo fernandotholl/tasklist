@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Basic API Auth
+Route::group(['prefix' => 'api',  'middleware' => 'apiauth'], function()
+{
+    Route::resource('tasks', 'TasksController');
+});
+
